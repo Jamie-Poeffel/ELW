@@ -59,8 +59,6 @@ async function selectFramework() {
                   console.error(`stderr: ${stderr}`);
                   return;
                }
-
-               console.log(`stdout: ${stdout}`);
             }
          );
       } else {
