@@ -3,19 +3,20 @@ param (
 )
 
 $errorMSG = ""
+
 # Check if running with Admin rights
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     if (-not $AdminStarted) {
         $adminProcess = Start-Process -FilePath "powershell.exe" `
             -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -AdminStarted" `
-            -Verb RunAs -PassThru 
+            -Verb RunAs -PassThru -WindowStyle Hidden
         
         $dotsCount = 1
         Clear-Host
         
         while (-not $adminProcess.HasExited) {
             if ($errorMSG -ne "") {
-                Write-Host "✖ " + $errorMSG -ForegroundColor Red
+                Write-Host $errorMSG -ForegroundColor Red
                 Exit 1;
             }
             # Erzeuge so viele Punkte wie dotsCount
@@ -34,7 +35,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
             }
 
             # Kleinerer Sleep für schnellere Animation
-            Start-Sleep -Milliseconds 300
+            Start-Sleep -Milliseconds 500
         }
         Clear-Host
 
@@ -43,13 +44,13 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     }
 }
 
+# PowerShell-Skript zum Klonen eines Git-Repositories
+$gitUrl = "https://Lynquity@github.com/Lynquity/free-gito"
+$clonePath = "C:/free-gito"
+$defaultpath = "C:/"
 
 try {
 
-    # PowerShell-Skript zum Klonen eines Git-Repositories
-    $gitUrl = "https://Lynquity@github.com/Lynquity/free-gito"
-    $clonePath = "C:/free-gito"
-    $defaultpath = "C:/"
     
     # Führe den git clone Befehl aus
     git clone $gitUrl $clonePath
