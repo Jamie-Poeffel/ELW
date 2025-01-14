@@ -56,6 +56,8 @@ try {
 }
 catch {
     $errorMSG += "Error while cloning gito: $_ `n" 
+    Exit 1
+
 }
 
 try {
@@ -66,6 +68,8 @@ try {
 }
 catch {
     $errorMSG += "Error while installing: $_ `n" 
+    Exit 1
+
 }
 
 try {
@@ -77,5 +81,3 @@ try {
 catch {
     $errorMSG += "Error while clearing up: $_ `n" 
 }
-
-Pause

@@ -2,6 +2,7 @@ param (
     [switch]$AdminStarted  # Prevent infinite loops
 )
 
+$errorMSG = ""
 
 # Check if running with Admin rights
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
@@ -14,6 +15,10 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
         Clear-Host
         
         while (-not $adminProcess.HasExited) {
+            if ($errorMSG -ne "") {
+                Write-Host $errorMSG -ForegroundColor Red
+                Exit 1;
+            }
             # Erzeuge so viele Punkte wie dotsCount
             $dots = "." * $dotsCount
 
@@ -49,7 +54,7 @@ try {
     git clone 'https://github.com/Jamie-Poeffel/ELW.git' $path
 }
 catch {
-    Write-Host "`rFehler beim Klonen des Repositories: $_" -ForegroundColor Red
+    $errorMSG += "Error while cloning ELW: $_ `n" 
     Exit 1
 }
 
@@ -60,7 +65,7 @@ try {
     & C:\ELW\app\install.bat
 }
 catch {
-    Write-Host "`rFehler beim Ausführen des Installationsskripts: $_" -ForegroundColor Red
+    $errorMSG += "Error while installing: $_ `n" 
     Exit 1
 }
 
@@ -71,7 +76,7 @@ try {
     Remove-Item "C:\ELW" -Recurse -Force
 }
 catch {
-    Write-Host "`rFehler beim Löschen des Ordners: $_" -ForegroundColor Red
+    $errorMSG += "Error while cleaning up: $_ `n"     
 }
 
 
