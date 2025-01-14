@@ -21,4 +21,3 @@ Set-Location .\ELW\app
 Set-Location $groundPath
  
 Remove-Item C:\ELW -Recurse -Force
-
