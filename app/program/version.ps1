@@ -10,7 +10,7 @@ $jsonUrl = 'https://raw.githubusercontent.com/Jamie-Poeffel/ELW/main/app/program
 # Fetch online version JSON data
 $vers = $version.version.Trim()  # Trim any spaces
 
-Write-Host "elx --- $vers"
+Write-Host "elx $vers"
 # Display the local version
 $online_version = Invoke-RestMethod -Uri $jsonUrl -Method Get
 

@@ -8,7 +8,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     if (-not $AdminStarted) {
         $adminProcess = Start-Process -FilePath "powershell.exe" `
             -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -AdminStarted" `
-            -Verb RunAs -PassThru -WindowStyle Hidden
+            -Verb RunAs -PassThru 
         
         $dotsCount = 1
         Clear-Host
