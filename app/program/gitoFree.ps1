@@ -2,6 +2,8 @@ param (
     [switch]$AdminStarted  # Prevent infinite loops
 )
 
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) { Write-Host "Git is not installed or not available in this path." -ForegroundColor Red }
+
 $errorMSG = ""
 
 # Check if running with Admin rights
