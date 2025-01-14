@@ -1,0 +1,17 @@
+{
+  "name": "framework-selector",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "framework.js",
+  "bin": "framework.js",
+  "pkg": {
+    "assets": [
+      "framework.js"
+    ]
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2"
+  }
+}
