@@ -15,7 +15,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
         
         while (-not $adminProcess.HasExited) {
             if ($errorMSG -ne "") {
-                Write-Host $errorMSG -ForegroundColor Red
+                Write-Host "✖ " + $errorMSG -ForegroundColor Red
                 Exit 1;
             }
             # Erzeuge so viele Punkte wie dotsCount
