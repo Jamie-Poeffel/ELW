@@ -19,5 +19,5 @@ $onvers = $online_version.version.Trim()  # Trim any spaces
 
 # Compare versions correctly
 if ($vers -ne $onvers) {
-    Write-Host "Update to new Version $onvers with command: elx -u / elx --update"
+    Write-Warning "Update to new Version $onvers with command: elx -u / elx --update"
 }
