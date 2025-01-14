@@ -7,17 +7,18 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Exit;
 }
 
-$groundPath = 'C:/'
+$groundPath = 'C:\'
+$path = 'C:\ELW'
 
-git clone 'https://github.com/Jamie-Poeffel/ELW.git' $groundPath
+git clone 'https://github.com/Jamie-Poeffel/ELW.git' $path
 
 Set-Location $groundPath
 Set-Location .\ELW\app
 
 
-& install.bat
+& C:\ELW\app\install.bat
 
 Set-Location $groundPath
  
-Remove-Item .\ELW -Recurse -Force
+Remove-Item C:\ELW -Recurse -Force
 
