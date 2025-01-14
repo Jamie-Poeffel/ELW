@@ -1,2 +1,1 @@
-Write-Error "
-Ungueltiger Befehl. Fuer hilfe '--help'."
+Write-Warning    "Ungueltiger Befehl. help at '--help'."
