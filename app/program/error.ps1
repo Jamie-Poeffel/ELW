@@ -1,1 +1,1 @@
-Write-Warning    "Ungueltiger Befehl. help at '--help'."
+Write-Host "Ungueltiger Befehl. help at '--help'." -ForegroundColor Red
