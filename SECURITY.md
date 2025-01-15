@@ -6,11 +6,13 @@ Use this section to tell people about which versions of your project are current
 
 | Version   | Supported          |
 | --------- | ------------------ |
+| 1.0.6     | :white_check_mark: |
+| 1.0.5     | :white_check_mark: |
 | 1.0.4     | :white_check_mark: |
 | 1.0.3     | :white_check_mark: |
-| 1.0.2     | :white_check_mark: |
-| 1.0.1     |        :x:         |
-| 0.0.1 pre |        :x:         |
+| 1.0.2     | :x:                |
+| 1.0.1     | :x:                |
+| 0.0.1 pre | :x:                |
 
 ### Reporting a Vulnerability
 
@@ -20,13 +22,13 @@ If you discover a security vulnerability, we encourage you to report it as soon 
 
 Please report vulnerabilities to our dedicated security team by emailing **[security@gmail.com](mailto:Jamie.poeffel@gmail.com)**. Ensure that your email includes the following details:
 
--   A clear and concise description of the vulnerability.
--   Steps to reproduce the issue (if applicable).
--   The impact or potential risk associated with the vulnerability.
--   Any possible suggestions for how the vulnerability could be mitigated.
+-  A clear and concise description of the vulnerability.
+-  Steps to reproduce the issue (if applicable).
+-  The impact or potential risk associated with the vulnerability.
+-  Any possible suggestions for how the vulnerability could be mitigated.
 
 #### 2. Response Time and Updates
 
--   **Investigation Update**: Within **3-5 weeks** after acknowledgment.
+-  **Investigation Update**: Within **3-5 weeks** after acknowledgment.
 
 Thank you for helping us maintain the security and integrity of our project!

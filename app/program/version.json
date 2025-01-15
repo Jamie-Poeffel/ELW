@@ -1,3 +1,13 @@
 {
-    "version": "1.0.6"
+    "version": "1.0.6",
+    "name": "ELX",
+    "description": "A smart software for maximum efficiency and innovation.",
+    "author": "Jamie Poeffel",
+    "license": "MIT",
+    "releaseDate": "2024-01-14",
+    "website": "https://www.example.com",
+    "repository": "https://github.com/Jamie-Poeffel/ELW",
+    "supportEmail": "elw2789@gmail.com",
+    "copyright": "© 2024 Your Jamie Poeffel"
 }
+
