@@ -15,7 +15,9 @@ $onvers = $online_version.version.Trim()  # Trim any spaces
 # Compare versions correctly
 if ($vers -ne $onvers) {
     Write-Host "Please update to new Version $onvers with command: elx -u / elx --update" -ForegroundColor Red
-    Exit 1
+    Exit
+}
+else {
+    & C:\Windows\System32\ELW\framework.exe
 }
 
-& C:\Windows\System32\ELW\framework.exe
