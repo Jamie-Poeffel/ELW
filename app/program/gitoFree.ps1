@@ -46,7 +46,10 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
         Clear-Host
 
         Write-Host "`Installation abgeschlossen!" -ForegroundColor Green
-        Exit
+
+        Pause
+
+        Exit-PSSession
     }
 }
 
