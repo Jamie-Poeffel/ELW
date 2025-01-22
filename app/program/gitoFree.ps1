@@ -41,7 +41,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
             }
 
             # Kleinerer Sleep für schnellere Animation
-            Start-Sleep -Milliseconds 300
+            Start-Sleep -Milliseconds 1500
         }
         Clear-Host
 
