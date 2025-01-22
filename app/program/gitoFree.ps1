@@ -2,7 +2,11 @@ param (
     [switch]$AdminStarted  # Prevent infinite loops
 )
 
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) { Write-Host "Git is not installed or not available in this path." -ForegroundColor Red }
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "Git is not installed or not available in PATH." -ForegroundColor Red
+    Exit 1
+}
+
 
 $errorMSG = ""
 
@@ -37,7 +41,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
             }
 
             # Kleinerer Sleep für schnellere Animation
-            Start-Sleep -Milliseconds 500
+            Start-Sleep -Milliseconds 300
         }
         Clear-Host
 
@@ -52,8 +56,6 @@ $clonePath = "C:/free-gito"
 $defaultpath = "C:/"
 
 try {
-
-    
     # Führe den git clone Befehl aus
     git clone $gitUrl $clonePath
 }
