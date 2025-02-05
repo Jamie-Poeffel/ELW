@@ -69,7 +69,7 @@ try {
 
     Start-Sleep 1
     
-    & "C:/free-gito/install.bat" "echo"
+    & "C:/free-gito/install.bat" "echo 'skip'"
 }
 catch {
     $errorMSG += "Error while installing: $_ `n" 
